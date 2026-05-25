@@ -64,10 +64,10 @@
           "builder": "@angular-devkit/build-angular:dev-server",
           "configurations": {
             "production": {
-              "buildTarget": "dbs-banking-demo:build:production"
+              "browserTarget": "dbs-banking-demo:build:production"
             },
             "development": {
-              "buildTarget": "dbs-banking-demo:build:development"
+              "browserTarget": "dbs-banking-demo:build:development"
             }
           },
           "defaultConfiguration": "development"
@@ -75,7 +75,7 @@
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "buildTarget": "dbs-banking-demo:build"
+            "browserTarget": "dbs-banking-demo:build"
           }
         },
         "test": {
@@ -97,8 +97,5 @@
         }
       }
     }
-  },
-  "cli": {
-    "analytics": false
   }
 }
