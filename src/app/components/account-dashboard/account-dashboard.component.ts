@@ -29,4 +29,24 @@ import { BankingApiService } from '../../services/banking-api.service';
   `,
   styles: [`
     .dashboard { padding: 20px; }
-    .balance-summary { display: flex; gap:
+    .balance-summary { display: flex; gap: 20px; margin-bottom: 20px; }
+    .balance-card { background: #f5f5f5; padding: 20px; border-radius: 8px; flex: 1; }
+    .balance-card h3 { margin: 0 0 10px; color: #666; font-size: 14px; }
+    .balance-card .amount { margin: 0; font-size: 24px; font-weight: bold; color: #333; }
+    .accounts-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(250px, 1fr)); gap: 20px; }
+    .account-card { background: #fff; border: 1px solid #e0e0e0; padding: 20px; border-radius: 8px; }
+    .account-card h4 { margin: 0 0 10px; color: #333; }
+    .account-number { color: #999; font-size: 14px; margin: 5px 0; }
+    .account-card .balance { font-size: 20px; font-weight: bold; color: #2e7d32; margin: 10px 0 0; }
+  `]
+})
+export class AccountDashboardComponent implements OnInit {
+  totalBalance = 0;
+  availableCredit = 0;
+  accounts: { type: string; number: string; balance: number }[] = [];
+
+  constructor(private bankingApi: BankingApiService) {}
+
+  ngOnInit(): void {
+  }
+}
